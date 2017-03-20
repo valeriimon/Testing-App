@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UsersApp</title>
+	<meta charset="utf-8" />		
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/backbone.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+	<header>
+	<div class="container">
+		<input type="text" name="" placeholder="Type a firstname" id="" />
+		<button class="search">Find</button>
+		<button class="show_all">Show All</button>
+		<button class="popup_button">Show chart</button>
+	</div>	
+	</header>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th><span class="lastname">Last</th>
+					<th class="firstname"><span>First</span></th>
+					<th>Username</th>
+					<th>Phone</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+	<div class="popup">
+		<div class="popup_close"></div>
+		<div id="container_popup"></div>
+	</div>
+	
+	
+
+
+
+
+
+	<script>
+		$(".popup_button").on("click", function(e){
+			$(".popup").fadeIn(200);
+		});
+		$(".popup_close").click(function(){
+			$(".popup").fadeOut(100);
+		})
+	</script>
+
+	<script type="text/html" id="tmp">
+		<tr>
+			<td>
+				<img src="<%= picture.thumbnail %>" alt="" />
+				<span><%= name.last %></span>
+			</td>
+			<td class="firstname">
+				<i><%= name.first %></i>
+			</td>
+			<td ><%= login.username %></td>
+			<td ><%= phone %></td>
+			<td ><%= location.city %></td>
+			<td class="plus"></td>
+		</tr>
+		<tr class="hide" data-value="true" style="display: none">
+			<td colspan="2"><!-- colspan="2" -->
+				<span class="nickname"><%= name.first %></span> <br />
+				<span class="info"><strong>Username</strong>:<%= login.username %><br />
+				<strong>Registered</strong>: <%= registered %><br />
+				<strong>Email</strong>: <%= email %></span>
+			</td>
+			<td >
+				<strong>Address</strong>:<% print(location.state,location.street) %><br />
+				<strong>City</strong>: <%= location.city %><br />
+				<strong>Zip Code</strong>: <%= location.postcode %>
+			</td>
+			<td colspan="2">
+				<strong>Birthday</strong>:<%= dob %><br />
+				<strong>Phone</strong>: <%= phone %><br />
+				<strong>Cell</strong>: <%= cell %>
+			</td>
+			<td > <!-- colspan="2" -->
+				<img src="<%= picture.large %>" alt="" />
+			</td>
+		</tr>
+	</script>	
+	
+
+	<script src="js/Models/user-model.js"></script>
+	<script src="js/Collections/users-collection.js"></script>
+	<script src="js/Views/UserView.js"></script>
+	
+	<script src="js/app.js"></script>
+</body>
+</html>

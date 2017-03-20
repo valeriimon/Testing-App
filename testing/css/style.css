@@ -1,0 +1,189 @@
+*{
+	padding: 0;
+	margin: auto;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	 box-sizing: border-box; 
+}
+
+body{
+	background-color: #EEEEEE;
+}
+
+header{
+	width: 100%;
+	height: 50px;
+	background-color: silver;
+}
+
+.container{
+	width: 95%;
+	height: 100%;
+}
+
+input{
+	height: 25px;
+	left: 64%;
+	top: 20%;
+	outline: none;
+	padding: 5px;
+}
+
+input::-webkit-input-placeholder{padding-left: 5px;} 
+input::-moz-input-placeholder   {padding-left: 5px;} 
+input:-moz-input-placeholder    {padding-left: 5px;} 
+input:-ms-input-placeholder     {padding-left: 5px;}
+
+input:focus::-webkit-input-placeholder{color: transparent;} 
+input:focus::-moz-input-placeholder   {color: transparent;} 
+input:focus:-moz-input-placeholder    {color: transparent;} 
+input:focus:-ms-input-placeholder     {color: transparent;}
+
+button.search{
+	left: 65%;
+	top: 20%;
+	outline: none;
+	padding: 4px 20px;
+	border: 1px solid #C7C7C7;
+	cursor: pointer;
+	background-color: #F3F3F3;
+	transition: background-color, 100ms;
+}
+
+button.search:hover, button.show_all:hover, button.popup_button:hover{
+	transition: background-color, 100ms;
+	background-color: #9194B2;
+}
+
+button.show_all{
+	left: 65.5%;
+	top: 20%;
+	outline: none;
+	padding: 4px 20px;
+	border: 1px solid #C7C7C7;
+	cursor: pointer;
+	background-color: #F3F3F3;
+	transition: background-color, 100ms;
+}
+
+button.popup_button{
+	top: 20%;
+	position: absolute;
+	margin: auto;
+	left: 5%;
+	outline: none;
+	padding: 4px 20px;
+	border: 1px solid #C7C7C7;
+	cursor: pointer;
+	background-color: #F3F3F3;
+	transition: background-color, 100ms;
+}
+
+div.popup{
+	width: 100%; 
+	min-height: 100%; 
+	display: none;
+	background-color: rgba(133,133,133,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+div.popup_close{
+	width: 20px; 
+	height: 20px;
+	background-image: url(../img/crest.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transform: rotate(-47deg);
+	margin-left: 64.8%;
+	margin-top: 140px;
+	cursor: pointer;
+}
+
+table{
+	margin-top: 20px;
+	width: 100%;
+	border-collapse:collapse;
+	table-layout: fixed;
+}
+
+thead>tr>th:first-child>span{
+	left: 62px;
+}
+
+tbody{
+	padding-top: 20px;
+}
+
+tr>th.firstname>span{
+	left: 25%;
+}
+
+tr>td.firstname>i{
+	left: 30%;
+}
+
+.container>table>tbody>tr:nth-child(4n+1){
+	background-color: #D0D0D0;
+}
+
+tbody>tr:not([class="hide"]):hover{
+	background-color: rgba(0,0,0,0.3)!important;
+	cursor: pointer;	
+}
+
+td{
+	padding: 20px;
+	//padding-top:40px; 
+	text-align: center;
+}
+
+td.plus{
+	height:100px;
+	background-image: url(../img/plus.png);
+	background-size: 30% 50%;
+	background-position: 50px, 20px;
+	background-repeat: no-repeat;
+}
+
+td.minus{
+	height:100px;
+	background-image: url(../img/minus.png);
+	background-size: 30% 50%;
+	background-position: 50px, 20px;
+	background-repeat: no-repeat;
+}
+
+tr>td>img{
+	border-radius: 50%;
+	left: 0;
+	float: left;
+}
+
+tr>td>span:not([class="info"]){
+	margin-left: 10%;
+	top: 40%;
+	position: absolute;
+}
+
+tr>td>span.nickname{
+	text-align: center;
+	top: 20%;
+	left: 34%;
+	font-size: 30px;
+}
+
+tr.hide>td:first-child{
+	background-image: url("../img/user_icon.png");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: 37% 25%;
+	padding-top: 45px!important;
+	top: 0!important;
+}
+
+tr.hide>td{
+	top: 10px; 
+}
